@@ -22,7 +22,6 @@ local TextButton = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 local TextLabel_3 = Instance.new("TextLabel")
 
-
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -97,16 +96,15 @@ TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel_3.TextSize = 50.000
 
 TextButton.MouseButton1Click:Connect(function()
-    local text = textbox.Text
+    local text = TextBox.Text
     if text == "Pathetic Bitch" then
-      textbox.Text = ""
-      textbox.PlaceholderText = "U Rly thought that would work"
+      TextBox.Text = ""
+      TextBox.PlaceholderText = "U Rly thought that would work"
     else
-      textbox.Text = ""
-      textbox.PlaceholderText = "Dumbass Nigger Read"
+      TextBox.Text = ""
+      TextBox.PlaceholderText = "Dumbass Nigger Read"
     end
   end)
-end
 else
 local UserInputService = game:GetService("UserInputService")
 local GuiService = game:GetService("GuiService")
@@ -141,14 +139,13 @@ input.BackgroundColor3 = Color3.fromRGB(128, 128, 128)
 input.Text = "Submit"
 input.TextScaled = true
 input.BorderSizePixel = 0
-input.Parent
-  
-  input.MouseButton1Click:Connect(function()
+input.Parent = frame
+
+input.MouseButton1Click:Connect(function()
     local text = textbox.Text
     if text == "H3LL" then
       screenGui:Destroy()
-      
-     loadstring(game:HttpGet("https://raw.githubusercontent.com/GodlikeXH3LL/H3LL-Ninja-Legend-V1/refs/heads/main/By%20Godlike.txt"))()
+      loadstring(game:HttpGet("https://raw.githubusercontent.com/GodlikeXH3LL/H3LL-Ninja-Legend-V1/refs/heads/main/By%20Godlike.txt"))()
     else
       textbox.Text = ""
       textbox.PlaceholderText = "Key Incorrect"
