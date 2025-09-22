@@ -41,7 +41,7 @@ TextLabel.BorderSizePixel = 0
 TextLabel.Position = UDim2.new(0, 0, 0.0591098741, 0)
 TextLabel.Size = UDim2.new(0, 391, 0, 111)
 TextLabel.Font = Enum.Font.Bangers
-TextLabel.Text = "BLACKLISTED FAGGOT"
+TextLabel.Text = "BLACKLISTED USER"
 TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.TextSize = 30.000
 
@@ -64,7 +64,7 @@ TextBox.BorderSizePixel = 0
 TextBox.Position = UDim2.new(0.351007104, 0, 0.347705126, 0)
 TextBox.Size = UDim2.new(0, 291, 0, 51)
 TextBox.Font = Enum.Font.PermanentMarker
-TextBox.Text = "INPUT THE KEY FUCKER"
+TextBox.Text = "INPUT THE KEY"
 TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextBox.TextSize = 28.000
 
@@ -99,10 +99,10 @@ TextButton.MouseButton1Click:Connect(function()
     local text = TextBox.Text
     if text == "Pathetic Bitch" then
       TextBox.Text = ""
-      TextBox.PlaceholderText = "U Rly thought that would work"
+      TextBox.PlaceholderText = "You really thought that would work?"
     else
       TextBox.Text = ""
-      TextBox.PlaceholderText = "Dumbass Nigger Read"
+      TextBox.PlaceholderText = "Invalid Key"
     end
   end)
 else
