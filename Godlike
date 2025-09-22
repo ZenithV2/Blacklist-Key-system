@@ -1,1 +1,60 @@
-print("hello")
+local UserInputService = game:GetService("UserInputService")
+local GuiService = game:GetService("GuiService")
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+screenGui.IgnoreGuiInset = true
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(1, 0, 1, 0)
+frame.Position = UDim2.new(0, 0, 0, 0)
+frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+frame.BorderSizePixel = 0
+frame.BackgroundTransparency = 0
+frame.Parent = screenGui
+
+local textbox = Instance.new("TextBox")
+textbox.Size = UDim2.new(0.4, 0, 0.1, 0)
+textbox.Position = UDim2.new(0.5, 0, 0.4, 0)
+textbox.AnchorPoint = Vector2.new(0.5, 0.5)
+textbox.BackgroundColor3 = Color3.fromRGB(128, 128, 128)
+textbox.PlaceholderText = "Enter Key"
+textbox.TextScaled = true
+textbox.BorderSizePixel = 0
+textbox.Parent = frame
+
+local input = Instance.new("TextButton")
+input.Size = UDim2.new(0.4, 0, 0.1, 0)
+input.Position = UDim2.new(0.5, 0, 0.55, 0)
+input.AnchorPoint = Vector2.new(0.5, 0.5)
+input.BackgroundColor3 = Color3.fromRGB(128, 128, 128)
+input.Text = "Submit"
+input.Font = Enum.Font.Garamond
+input.TextScaled = true
+input.BorderSizePixel = 0
+input.Parent = frame
+
+local blacklistedUsers = {
+  ["NW_GlitcherLambda"] = true
+}
+local player = game.Players.LocalPlayer
+local username = player.Name
+
+local function isblacklisted(name)
+  return blacklistedUsers[name] or false
+end
+
+if isblacklisted(username) then
+  player:Kick("You are blacklisted.")
+else
+  input.MouseButton1Click:Connect(function()
+    local text = textbox.Text
+    if text == "H3LL" then
+      textbox.Text = ""
+      textbox.PlaceholderText = "Key Correct"
+    else
+      textbox.Text = ""
+      textbox.PlaceholderText = "Key Incorrect"
+    end
+  end)
+end
